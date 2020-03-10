@@ -43,11 +43,15 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 let aTagsNodeList = document.getElementsByTagName("a");
 let aTags = Array.prototype.slice.call(aTagsNodeList);
+aTags.forEach(link => link.style.color = 'green')
 
 // let index = 0;
 aTags.forEach((aTag, index) => {
   let navItem = index + 1;
   aTag.innerHTML = siteContent["nav"]["nav-item-" + navItem];
+
+
+
   // index++;
 })
 
@@ -98,8 +102,16 @@ let logoThree = document.querySelector("#middle-img")
 logoThree.setAttribute('src', siteContent["main-content"]['middle-img-src'])
 
 
+let contactInfo = document.querySelector('.contact')
 
+contactInfo.getElementsByTagName('h4')[0].textContent = siteContent['contact']['contact-h4']
+contactInfo.getElementsByTagName('p')[0].textContent = siteContent['contact']['address']
+contactInfo.getElementsByTagName('p')[1].textContent = siteContent['contact']['phone']
+contactInfo.getElementsByTagName('p')[2].textContent = siteContent['contact']['email']
 
+let footer = document.querySelector('footer')
+
+footer.innerText = 'Copyright Great Idea! 2018'
 
 
 
